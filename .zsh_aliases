@@ -1,0 +1,16 @@
+##### Config
+alias al='source ~/config/.zsh_aliases'
+alias val='vim ~/config/.zsh_aliases && al'
+
+# NVM
+export NVM_DIR="/home/david/.nvm"
+# Load nvm
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+
+# Android SDK
+export ANDROID_HOME=$HOME/programs/android-sdk-linux
+export PATH=$ANDROID_HOME/tools:$PATH
+export PATH=$ANDROID_HOME/platform-tools:$PATH
+
+# Navigation
+alias la='ls -a'
