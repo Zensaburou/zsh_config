@@ -1,6 +1,6 @@
 ##### Config
-alias al='source ~/config/.zsh_aliases'
-alias val='vim ~/config/.zsh_aliases && al'
+alias al='source ~/zsh_config/.zsh_aliases'
+alias val='vim ~/zsh_config/.zsh_aliases && al'
 
 # NVM
 export NVM_DIR="/home/david/.nvm"
