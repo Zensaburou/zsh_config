@@ -103,3 +103,39 @@ fi
 ##### Config
 alias al='source ~/.zshrc'
 alias val='vim ~/apps/github/zensaburou/zsh_config/.zsh_aliases && al'
+
+# Vim
+#####
+## Edit CLI commands with vim (^x^e)
+autoload -U edit-command-line
+
+alias v.="vim ."
+
+ber () {
+	bundle exec spring rspec $1
+}
+
+wspec () {
+	watch -n 0.1 bundle exec spring rspec $1
+}
+
+dcty () {
+	docker run -it --entrypoint bash $1
+}
+
+# Recursively find and replace a string
+rplc () {
+	LC_ALL=C find . -type f -name '*.rb' -exec sed -i '' s/$1/$2/ {} +
+}
+
+kubeshell () {
+	kubectl exec -i -t $1 -- /bin/bash
+}
+
+jrnl () {
+	echo "\n========================" >> ~/Documents/journal/journal.md
+	echo `date "+%a %b %d %H:%M:%S %Y"` >> ~/Documents/journal/journal.md
+	echo "\n" >> ~/Documents/journal/journal.md
+
+	vim "+normal G$" +startinsert ~/Documents/journal/journal.md
+}
