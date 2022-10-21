@@ -111,6 +111,10 @@ autoload -U edit-command-line
 
 alias v.="vim ."
 
+be () {
+	bundle exec "$@"
+}
+
 ber () {
 	bundle exec spring rspec $1
 }
