@@ -103,6 +103,7 @@ fi
 ##### Config
 alias al='source ~/.zshrc'
 alias val='vim ~/apps/github/zensaburou/zsh_config/.zsh_aliases && al'
+alias zal='vim ~/.zshrc && al'
 
 # Vim
 #####
@@ -136,6 +137,7 @@ kubeshell () {
 	kubectl exec -i -t $1 -- /bin/bash
 }
 
+# Note taking miscellanea
 jrnl () {
 	echo "\n========================" >> ~/Documents/journal/journal.md
 	echo `date "+%a %b %d %H:%M:%S %Y"` >> ~/Documents/journal/journal.md
@@ -143,3 +145,20 @@ jrnl () {
 
 	vim "+normal G$" +startinsert ~/Documents/journal/journal.md
 }
+
+#### Note taking
+alias cmet='cd /Users/davidjaress/Documents/notes'
+
+meet () {
+	file_name="/Users/davidjaress/Documents/notes/`date +"%Y%m%d"`_$1.txt"
+	touch $file_name
+	vim $file_name
+}
+
+# ctags
+alias ctags='/usr/local/bin/ctags'
+alias ctag='ctags -R --output-format=json --languages=ruby --exclude=.git --exclude=log -f .tags'
+
+# rbenv
+eval "$(rbenv init -)"
+
